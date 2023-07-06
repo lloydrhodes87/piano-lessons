@@ -32,6 +32,10 @@ function handleLogin() {
 function continueAsGuest() {
   authStore.setAccess('guest');
 }
+
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <style lang="scss" scoped>

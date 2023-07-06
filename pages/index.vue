@@ -1,15 +1,11 @@
 <template>
-    <div>
-        <h1>HOME</h1>
-    </div>
+  <div></div>
 </template>
 
 <script setup>
-    definePageMeta({
-        middleware: ["auth"]
-    })
+definePageMeta({
+  middleware: ['auth'],
+});
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
