@@ -32,10 +32,6 @@ function handleLogin() {
 function continueAsGuest() {
   authStore.setAccess('guest');
 }
-
-definePageMeta({
-  layout: false,
-});
 </script>
 
 <style lang="scss" scoped>
@@ -55,6 +51,8 @@ definePageMeta({
     background-size: cover;
 
     background-repeat: no-repeat;
+    animation: background-animation 100s infinite;
+
     @include center-element;
     h1 {
       color: white;
@@ -86,6 +84,18 @@ definePageMeta({
   a {
     text-decoration: underline;
     text-underline-position: under;
+  }
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
 </style>

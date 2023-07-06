@@ -1,9 +1,11 @@
 <template>
-  <div class="dropdown-container" v-show="parentHovered">
-    <ul>
-      <slot></slot>
-    </ul>
-  </div>
+  <transition name="nav-dropdown">
+    <div class="dropdown-container" v-show="parentHovered">
+      <ul>
+        <slot></slot>
+      </ul>
+    </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
@@ -34,5 +36,20 @@ defineProps<{ parentHovered: boolean }>();
   p {
     color: white;
   }
+}
+
+.nav-dropdown-enter-from,
+.nav-dropdown-leave-to {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.nav-dropdown-enter-to,
+.nav-dropdown-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+.nav-dropdown-enter-active,
+.nav-dropdown-leave-active {
+  transition: 0.1s ease;
 }
 </style>
